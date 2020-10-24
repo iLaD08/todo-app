@@ -8,7 +8,7 @@ const Todo = ({ todo, index, completeTodo, removeTodo }) => {
         >
           {todo.text}
           <div className="todo-buttons">
-            <button onClick={() => completeTodo(index)}>✅</button>
+            <button style={{ display: todo.isCompleted ? "none" : "" }} onClick={() => completeTodo(index)}>✅</button>
             <button onClick={() => removeTodo(index)}>❌</button>
           </div>
         </div>
