@@ -1,8 +1,9 @@
 import React from "react";
 import Todo from "../todo/index";
 import TodoForm from "../todo-form/index";
+import { TodoListDiv, Title } from "./styles";
 
-const TodoList = () => {
+const TodoList = ({ theme }) => {
   
     const [todos, setTodos] = React.useState([
       { text: "Learn about React" },
@@ -28,8 +29,12 @@ const TodoList = () => {
     };
     
     return (
-        <div className="todo-list">
-          <h1>Todo list:</h1>
+        <TodoListDiv
+        style={{
+          background: theme === 'dark' ? '#080729' : '#e8e8e8',
+          color: theme === 'dark' ? '#f7f7ff' : 'gray' 
+        }}>
+          <Title>Todo list:</Title>
         {todos.map((todo, index) => (
           <Todo
             key={index}
@@ -37,10 +42,11 @@ const TodoList = () => {
             todo={todo}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
+            theme={theme}
           />
         ))}
-        <TodoForm addTodo={addTodo} />
-      </div>
+        <TodoForm addTodo={addTodo}/>
+      </TodoListDiv>
     )
 };
 

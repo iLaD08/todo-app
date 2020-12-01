@@ -1,17 +1,21 @@
-import React from "react"
+import React from "react";
+import { TodoDiv, TodoButtonsDiv, TodoButtons } from "./styles";
 
-const Todo = ({ todo, index, completeTodo, removeTodo }) => {
+const Todo = ({ todo, index, completeTodo, removeTodo, theme }) => {
     return (
-        <div
-          className="todo"
-          style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+        <TodoDiv
+          style={{
+            textDecoration: todo.isCompleted ? "line-through" : "",
+            background: theme === 'dark' ? '#29284f' : '#fff',
+            color: theme === 'dark' ? '#fff' : '#000' 
+          }}
         >
           {todo.text}
-          <div className="todo-buttons">
-            <button style={{ display: todo.isCompleted ? "none" : "" }} onClick={() => completeTodo(index)}>✅</button>
-            <button onClick={() => removeTodo(index)}>❌</button>
-          </div>
-        </div>
+          <TodoButtonsDiv>
+            <TodoButtons style={{ display: todo.isCompleted ? "none" : "" }} onClick={() => completeTodo(index)}>✅</TodoButtons>
+            <TodoButtons onClick={() => removeTodo(index)}>❌</TodoButtons>
+          </TodoButtonsDiv>
+        </TodoDiv>
       );
   };
 

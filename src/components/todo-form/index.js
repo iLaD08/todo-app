@@ -1,5 +1,6 @@
 import React from "react";
-
+import { TodoFormInput } from "./styles";
+ 
 const TodoForm = ({ addTodo }) => {
     const [value, setValue] = React.useState("");
   
@@ -12,7 +13,7 @@ const TodoForm = ({ addTodo }) => {
   
     return (
       <form onSubmit={handleSubmit}>
-        <input
+        <TodoFormInput
           type="text"
           className="input"
           value={value}
