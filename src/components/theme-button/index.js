@@ -1,9 +1,7 @@
 import React from "react";
 import { ThemeBtn } from "./style"
 
-const ThemeButton = ({ toggleTheme, theme }) =>  {
-    const moon = "https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg";
-    return (
+const ThemeButton = ({ toggleTheme, theme }) => (
             <div className="theme-button">
                  <ThemeBtn 
                  type="button"  
@@ -16,7 +14,6 @@ const ThemeButton = ({ toggleTheme, theme }) =>  {
                 </ThemeBtn>
                  
             </div>
-    )
-};
+);
 
 export default ThemeButton;

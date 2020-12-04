@@ -1,8 +1,7 @@
 import React from "react";
 import { TodoDiv, TodoButtonsDiv, TodoButtons } from "./styles";
 
-const Todo = ({ todo, index, completeTodo, removeTodo, theme }) => {
-    return (
+const Todo = ({ todo, index, completeTodo, removeTodo, theme }) => (
         <TodoDiv
           style={{
             textDecoration: todo.isCompleted ? "line-through" : "",
@@ -16,7 +15,6 @@ const Todo = ({ todo, index, completeTodo, removeTodo, theme }) => {
             <TodoButtons onClick={() => removeTodo(index)}>❌</TodoButtons>
           </TodoButtonsDiv>
         </TodoDiv>
-      );
-  };
+);
 
 export default Todo;
