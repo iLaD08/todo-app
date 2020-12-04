@@ -6,6 +6,7 @@ import './App.css';
   
 const App = () => {
     const [theme, toggleTheme] = useTheme();
+    
     useEffect(() => {
         document.body.style.backgroundColor = theme === 'dark' ? '#020212' : '#fff';
     }, [theme]);

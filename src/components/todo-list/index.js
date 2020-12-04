@@ -1,30 +1,35 @@
-import React from "react";
+import React,{ useState, useEffect } from "react";
 import Todo from "../todo/index";
 import TodoForm from "../todo-form/index";
 import { TodoListDiv, Title } from "./styles";
 
+
 const TodoList = ({ theme }) => {
-  
-    const [todos, setTodos] = React.useState([
-      { text: "Learn about React" },
-      { text: "Meet friend for lunch" },
-      { text: "Build really cool todo app" }
-    ]);
+    const initialvalue = JSON.parse(window.localStorage.getItem("todos"));
+
+    const [todos, setTodos] = useState([]);
+
+    useEffect(() => {
+      initialvalue && setTodos(initialvalue);
+  }, [initialvalue]);
 
     const addTodo = text => {
         const newTodos = [...todos, { text }];
+        window.localStorage.setItem("todos", JSON.stringify(newTodos));
         setTodos(newTodos);
     };
 
     const completeTodo = index => {
         const newTodos = [...todos];
         newTodos[index].isCompleted = true;
+        window.localStorage.setItem("todos", JSON.stringify(newTodos));
         setTodos(newTodos);
     };
 
     const removeTodo = index => {
         const newTodos = [...todos];
         newTodos.splice(index, 1);
+        window.localStorage.setItem("todos", JSON.stringify(newTodos));
         setTodos(newTodos);
     };
     

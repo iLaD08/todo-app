@@ -1,8 +1,8 @@
-import React from "react";
+import React,{ useState } from "react";
 import { TodoFormInput } from "./styles";
  
 const TodoForm = ({ addTodo }) => {
-    const [value, setValue] = React.useState("");
+    const [value, setValue] = useState("");
   
     const handleSubmit = e => {
       e.preventDefault();
