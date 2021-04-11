@@ -12,3 +12,12 @@ export const TodoListDiv = styled.div`
 export const Title = styled.h1`
     text-align: center;
 `;
+
+export const TodoEmpty = styled.h2`
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+    margin-bottom: 6px;
+    padding: 3px 10px;
+`;
